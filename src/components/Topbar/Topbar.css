@@ -1,0 +1,29 @@
+/* ---- TOP BAR ---- */
+.topbar {
+    background: #003087;
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+}
+
+.topbar span {
+    opacity: 0.85;
+}
+
+.topbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.topbar-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.topbar-links a:hover {
+    opacity: 1;
+}
