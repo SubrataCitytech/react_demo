@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # React_Demo nopCommerce integration
 
 A new Flutter project.
@@ -133,7 +133,7 @@ Special thanks to:
 
 💡 Your support inspires innovation and growth.
 
-=======
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -209,4 +209,4 @@ export default defineConfig([
   },
 ])
 ```
->>>>>>> 9115dee (Initial commit)
+
