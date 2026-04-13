@@ -14,8 +14,7 @@
 }
 
 .topbar-links {
-    display: flex;
-    gap: 20px;
+    width: 100%;
 }
 
 .topbar-links a {

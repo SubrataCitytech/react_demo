@@ -27,92 +27,92 @@ const styles = `
   // .topbar-links a { color: #fff; text-decoration: none; opacity: 0.85; }
   // .topbar-links a:hover { opacity: 1; }
 
-  /* ---- NAVBAR ---- */
-  .navbar {
-    background: #fff;
-    border-bottom: 1px solid #e8e8e8;
-    padding: 0 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-  }
-  .navbar-inner {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    height: 60px;
-  }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 26px;
-    color: #003087;
-    font-weight: 400;
-    letter-spacing: 1px;
-    flex-shrink: 0;
-  }
-  .nav-search {
-    flex: 1;
-    max-width: 480px;
-    display: flex;
-    border: 1.5px solid #d0d0d0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-  .nav-search:focus-within { border-color: #003087; }
-  .nav-search input {
-    flex: 1;
-    padding: 8px 14px;
-    border: none;
-    outline: none;
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .nav-search button {
-    background: #003087;
-    color: #fff;
-    border: none;
-    padding: 0 16px;
-    cursor: pointer;
-    font-size: 15px;
-  }
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-left: auto;
-  }
-  .nav-action-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    padding: 6px 10px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 10px;
-    color: #444;
-    border-radius: 6px;
-    transition: background 0.15s;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .nav-action-btn:hover { background: #f0f4ff; color: #003087; }
-  .nav-action-btn svg { width: 20px; height: 20px; }
-  .nav-plus-btn {
-    background: #003087;
-    color: #fff;
-    border: none;
-    padding: 7px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.2s;
-  }
-  .nav-plus-btn:hover { background: #002060; }
+  // /* ---- NAVBAR ---- */
+  // .navbar {
+  //   background: #fff;
+  //   border-bottom: 1px solid #e8e8e8;
+  //   padding: 0 40px;
+  //   position: sticky;
+  //   top: 0;
+  //   z-index: 100;
+  //   box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  // }
+  // .navbar-inner {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 20px;
+  //   height: 60px;
+  // }
+  // .nav-logo {
+  //   font-family: 'DM Serif Display', serif;
+  //   font-size: 26px;
+  //   color: #003087;
+  //   font-weight: 400;
+  //   letter-spacing: 1px;
+  //   flex-shrink: 0;
+  // }
+  // .nav-search {
+  //   flex: 1;
+  //   max-width: 480px;
+  //   display: flex;
+  //   border: 1.5px solid #d0d0d0;
+  //   border-radius: 8px;
+  //   overflow: hidden;
+  //   transition: border-color 0.2s;
+  // }
+  // .nav-search:focus-within { border-color: #003087; }
+  // .nav-search input {
+  //   flex: 1;
+  //   padding: 8px 14px;
+  //   border: none;
+  //   outline: none;
+  //   font-size: 13px;
+  //   font-family: 'DM Sans', sans-serif;
+  // }
+  // .nav-search button {
+  //   background: #003087;
+  //   color: #fff;
+  //   border: none;
+  //   padding: 0 16px;
+  //   cursor: pointer;
+  //   font-size: 15px;
+  // }
+  // .nav-actions {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 6px;
+  //   margin-left: auto;
+  // }
+  // .nav-action-btn {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   gap: 2px;
+  //   padding: 6px 10px;
+  //   border: none;
+  //   background: transparent;
+  //   cursor: pointer;
+  //   font-size: 10px;
+  //   color: #444;
+  //   border-radius: 6px;
+  //   transition: background 0.15s;
+  //   font-family: 'DM Sans', sans-serif;
+  // }
+  // .nav-action-btn:hover { background: #f0f4ff; color: #003087; }
+  // .nav-action-btn svg { width: 20px; height: 20px; }
+  // .nav-plus-btn {
+  //   background: #003087;
+  //   color: #fff;
+  //   border: none;
+  //   padding: 7px 16px;
+  //   border-radius: 20px;
+  //   font-size: 12px;
+  //   font-weight: 600;
+  //   cursor: pointer;
+  //   font-family: 'DM Sans', sans-serif;
+  //   transition: background 0.2s;
+  // }
+  // .nav-plus-btn:hover { background: #002060; }
 
   /* ---- CATEGORY NAV ---- */
   .cat-nav {
@@ -886,7 +886,7 @@ export default function NiaHomepage() {
       </div> */}
 
       {/* NAVBAR */}
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <div className="navbar-inner">
           <div className="nav-logo">NIA</div>
           <div className="nav-search">
@@ -913,7 +913,7 @@ export default function NiaHomepage() {
             <button className="nav-plus-btn">✦ NIA Plus</button>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       {/* CATEGORY NAV */}
       <div className="cat-nav">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NiaHomepage from './components/Header/NiaHomepage'
 import Header from './components/Header/Header'
