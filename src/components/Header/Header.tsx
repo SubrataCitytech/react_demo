@@ -9,16 +9,19 @@ const navActionBtn = [{
     href: "#",
     Icon: VscAccount,
     label: "Account",
+    className: "account",
 },
 {
     href: "#",
     Icon: CiHeart,
     label: "Wishlist",
+    className: "wishlist",
 },
 {
     href: "#",
     Icon: CiShoppingCart,
     label: "Cart",
+    className: "cart",
 }]
 
 export default function Header() {
@@ -36,15 +39,14 @@ export default function Header() {
                                 setSearchVal(e.target.value)
                                 console.log(e.target.value);
                             }}
-                            placeholder="Search for appliances, brands..."
+                            placeholder="Search here..."
                         />
                         <button>🔍</button>
                     </div>
                     <div className="nav-actions">
                         {
                             navActionBtn.map((item, index) => (
-                                <NavActionButton key={index} href={item.href} Icon={item.Icon} >
-
+                                <NavActionButton key={index} href={item.href} Icon={item.Icon} className={item.className} >
                                     {item.label}
                                 </NavActionButton>
                             ))

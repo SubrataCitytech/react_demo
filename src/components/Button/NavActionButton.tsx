@@ -11,16 +11,17 @@ const NavActionButton: React.FC<NavActionButtonProps> = ({
     href = "#",
     Icon,
     children,
-    className = "",
+    className,
     ...props
 }) => {
     return (
         <button
-            className={'nav-action-btn ${className}'}
+            className={`nav-action-btn ${className || ''}`}
             {...props}
         >
-            {Icon && <Icon style={{ fontSize: "20px" }} />}
-            {children && <span style={{ fontSize: "20px" }} >{children}</span>}
+            {Icon && <Icon style={{ fontSize: "20px" }} />
+            }
+            {children && <span style={{ fontSize: "14px" }} >{children}</span>}
         </button >
     )
 }
