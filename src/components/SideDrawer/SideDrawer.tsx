@@ -55,7 +55,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                 </button>
 
                 <div className="divider">
-                    <span>New at NIA?</span>
+                    <span>New at eCommerce?</span>
                 </div>
 
                 <button className="create-btn">Create account</button>
