@@ -49,18 +49,6 @@ export default function Header() {
                                 </NavActionButton>
                             ))
                         }
-                        {/* <button className="nav-action-btn">
-                            <span style={{ fontSize: 20 }}>👤</span>
-                            <span>Account</span>
-                        </button>
-                        <button className="nav-action-btn">
-                            <span style={{ fontSize: 20 }}>🤍</span>
-                            <span>Wishlist</span>
-                        </button>
-                        <button className="nav-action-btn">
-                            <span style={{ fontSize: 20 }}>🛒</span>
-                            <span>Cart</span>
-                        </button> */}
                     </div>
                 </div>
             </nav>

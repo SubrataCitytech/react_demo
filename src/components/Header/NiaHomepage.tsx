@@ -837,7 +837,21 @@ const trustItems = [
   { icon: "↩️", title: "Easy Returns", desc: "Not satisfied? Return within 14 days, hassle-free." },
 ];
 
-function ProductCard({ product }) {
+
+type Product = {
+  id?: number;
+  name: string;
+  price: number;
+  old: number | string;
+  tag: string;
+  emoji: string;
+};
+
+type Props = {
+  product: Product;
+};
+
+function ProductCard({ product }: Props) {
   const [wished, setWished] = useState(false);
   return (
     <div className="product-card">
@@ -858,7 +872,7 @@ function ProductCard({ product }) {
 
 export default function NiaHomepage() {
   const [activeCategory, setActiveCategory] = useState(0);
-  const [searchVal, setSearchVal] = useState("");
+  // const [searchVal, setSearchVal] = useState("");
   const categories = [
     { label: "Heaters", emoji: "🔥" },
     { label: "Microwaves", emoji: "📡" },
@@ -987,7 +1001,7 @@ export default function NiaHomepage() {
           <div className="cooling-img">🌀</div>
         </div>
         <div className="products-scroll">
-          {coolingProducts.map((p, i) => <ProductCard key={i} product={p} />)}
+          {coolingProducts.map((p, i) => <ProductCard key={i} product={{ ...p, price: Number(p.price) }} />)}
         </div>
       </div>
 
@@ -1023,7 +1037,7 @@ export default function NiaHomepage() {
           </div>
         </div>
         <div className="products-scroll">
-          {hydrationProducts.map((p, i) => <ProductCard key={i} product={p} />)}
+          {hydrationProducts.map((p, i) => <ProductCard key={i} product={{ ...p, price: Number(p.price) }} />)}
         </div>
       </div>
 
