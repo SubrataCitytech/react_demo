@@ -6,6 +6,7 @@ type NavActionButtonProps = {
     Icon?: React.ElementType;
     children?: React.ReactNode;
     className?: string;
+    onClick?: () => void;
 };
 const NavActionButton: React.FC<NavActionButtonProps> = ({
     href = "#",

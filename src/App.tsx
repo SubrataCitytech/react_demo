@@ -3,12 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NiaHomepage from './components/Header/NiaHomepage'
 import Header from './components/Header/Header'
+import TopCategory from './components/Top_Category/TopCategory';
 
 function App() {
 
   return (
     <>
       <Header />
+      <TopCategory />
       <NiaHomepage />
       {/* <NiaHomepage /> */}
       {/* <section id="center">

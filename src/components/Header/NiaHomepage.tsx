@@ -115,51 +115,51 @@ const styles = `
   // .nav-plus-btn:hover { background: #002060; }
 
   /* ---- CATEGORY NAV ---- */
-  .cat-nav {
-    background: #fff;
-    border-bottom: 1px solid #efefef;
-    padding: 0 40px;
-  }
-  .cat-nav-inner {
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .cat-nav-inner::-webkit-scrollbar { display: none; }
-  .cat-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 18px;
-    cursor: pointer;
-    font-size: 11px;
-    color: #555;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: all 0.15s;
-    flex-shrink: 0;
-  }
-  .cat-nav-item:hover, .cat-nav-item.active {
-    color: #003087;
-    border-bottom-color: #003087;
-  }
-  .cat-nav-item img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-  }
-  .cat-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background: #f5f7ff;
-  }
+  // .cat-nav {
+  //   background: #fff;
+  //   border-bottom: 1px solid #efefef;
+  //   padding: 0 40px;
+  // }
+  // .cat-nav-inner {
+  //   display: flex;
+  //   gap: 0;
+  //   overflow-x: auto;
+  //   scrollbar-width: none;
+  // }
+  // .cat-nav-inner::-webkit-scrollbar { display: none; }
+  // .cat-nav-item {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   gap: 6px;
+  //   padding: 10px 18px;
+  //   cursor: pointer;
+  //   font-size: 11px;
+  //   color: #555;
+  //   white-space: nowrap;
+  //   border-bottom: 2px solid transparent;
+  //   transition: all 0.15s;
+  //   flex-shrink: 0;
+  // }
+  // .cat-nav-item:hover, .cat-nav-item.active {
+  //   color: #003087;
+  //   border-bottom-color: #003087;
+  // }
+  // .cat-nav-item img {
+  //   width: 36px;
+  //   height: 36px;
+  //   object-fit: contain;
+  // }
+  // .cat-icon {
+  //   width: 36px;
+  //   height: 36px;
+  //   border-radius: 8px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-size: 20px;
+  //   background: #f5f7ff;
+  // }
 
   /* ---- HERO ---- */
   .hero {
@@ -871,19 +871,19 @@ function ProductCard({ product }: Props) {
 }
 
 export default function NiaHomepage() {
-  const [activeCategory, setActiveCategory] = useState(0);
+  // const [activeCategory, setActiveCategory] = useState(0);
   // const [searchVal, setSearchVal] = useState("");
-  const categories = [
-    { label: "Heaters", emoji: "🔥" },
-    { label: "Microwaves", emoji: "📡" },
-    { label: "Air Conditioners", emoji: "❄️" },
-    { label: "Steamers", emoji: "♨️" },
-    { label: "Evellers", emoji: "🌫️" },
-    { label: "Refrigeration", emoji: "🧊" },
-    { label: "Washing/Dryers", emoji: "👕" },
-    { label: "Space Warmers", emoji: "🌡️" },
-    { label: "Air Conditioners", emoji: "🌬️" },
-  ];
+  // const categories = [
+  //   { label: "Heaters", emoji: "🔥" },
+  //   { label: "Microwaves", emoji: "📡" },
+  //   { label: "Air Conditioners", emoji: "❄️" },
+  //   { label: "Steamers", emoji: "♨️" },
+  //   { label: "Evellers", emoji: "🌫️" },
+  //   { label: "Refrigeration", emoji: "🧊" },
+  //   { label: "Washing/Dryers", emoji: "👕" },
+  //   { label: "Space Warmers", emoji: "🌡️" },
+  //   { label: "Air Conditioners", emoji: "🌬️" },
+  // ];
 
   return (
     <div className="nia-root">
@@ -930,7 +930,7 @@ export default function NiaHomepage() {
       </nav> */}
 
       {/* CATEGORY NAV */}
-      <div className="cat-nav">
+      {/* <div className="cat-nav">
         <div className="cat-nav-inner">
           {categories.map((c, i) => (
             <div
@@ -943,7 +943,7 @@ export default function NiaHomepage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* HERO */}
       <div className="hero">
