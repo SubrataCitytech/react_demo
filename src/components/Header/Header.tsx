@@ -1,33 +1,44 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Topbar from '../Topbar/Topbar'
 import './Header.css'
-import { VscAccount } from 'react-icons/vsc';
-import { CiHeart, CiSearch, CiShoppingCart } from 'react-icons/ci';
+import { CiDeliveryTruck, CiHeart, CiSearch, CiShoppingCart, CiUser } from 'react-icons/ci';
 import NavActionButton from '../Button/NavActionButton';
 import SideDrawer from '../SideDrawer/SideDrawer';
+import { AuthContext } from '../../context/AuthContext';
 
 
 
 export default function Header() {
     const [searchVal, setSearchVal] = useState("");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    const auth = useContext(AuthContext);
+
+    const username = auth?.username;
+
     const navActionBtn = [{
         href: "#",
-        Icon: VscAccount,
-        label: "Account",
+        Icon: CiUser,
+        label: `Hi, ${username || "User"}`,
         className: "account",
         onClick: () => setIsDrawerOpen(true),
     },
     {
         href: "#",
+        Icon: CiDeliveryTruck,
+        // label: "order tracking",
+        className: "order_tracking",
+    },
+    {
+        href: "#",
         Icon: CiHeart,
-        label: "Wishlist",
+        // label: "Wishlist",
         className: "wishlist",
     },
     {
         href: "#",
         Icon: CiShoppingCart,
-        label: "Cart",
+        // label: "Cart",
         className: "cart",
     }]
     return (

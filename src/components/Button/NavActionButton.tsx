@@ -22,7 +22,7 @@ const NavActionButton: React.FC<NavActionButtonProps> = ({
         >
             {Icon && <Icon style={{ fontSize: "20px" }} />
             }
-            {children && <span style={{ fontSize: "14px" }} >{children}</span>}
+            {children && <span style={{ fontSize: "14px" }} >{children || ''}</span>}
         </button >
     )
 }

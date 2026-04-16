@@ -1,12 +1,10 @@
 /* ---- NAVBAR ---- */
 .navbar {
-    background: #fff;
-    border-bottom: 1px solid #e8e8e8;
+    background: var(--white-color);
     padding: 0 40px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
 .navbar-inner {
@@ -28,12 +26,12 @@
 
 .nav-search {
     flex: 1;
-    max-width: 480px;
+    max-width: 36.5rem;
     display: flex;
-    border: 1.5px solid #d0d0d0;
-    border-radius: 8px;
+    border: none;
+    border-radius: 3rem;
     overflow: hidden;
-    transition: border-color 0.2s;
+    background: #F4F4F4;
 }
 
 .nav-search:focus-within {
@@ -45,18 +43,18 @@
     padding: 8px 14px;
     border: none;
     outline: none;
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    background: transparent;
 }
 
 .nav-search button {
-    background: #003087;
-    color: #fff;
+    background: transparent;
+    color: #111;
     border: none;
-    padding: 0 16px;
+    padding: 0 1.6rem;
     cursor: pointer;
-    font-size: 25px;
-    line-height: 15px;
+    font-size: 2.5rem;
+    line-height: 0;
 }
 
 .nav-actions {
@@ -68,18 +66,22 @@
 
 .nav-action-btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 2px;
+    gap: 6px;
     padding: 4px 6px;
     border: none;
     background: transparent;
     cursor: pointer;
-    font-size: 10px;
-    color: #444;
+    font-size: 1.4rem;
+    font-family: var(--Avenir-regular);
+    color: var(--black-color);
     border-radius: 6px;
     transition: background 0.15s;
-    font-family: 'DM Sans', sans-serif;
+}
+
+button.nav-action-btn.account {
+    margin-right: 3rem;
 }
 
 .nav-action-btn:hover {
@@ -88,8 +90,8 @@
 }
 
 .nav-action-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .nav-plus-btn {

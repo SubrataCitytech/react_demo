@@ -1,7 +1,9 @@
 
 # React_Demo nopCommerce integration
 
-A new Flutter project.
+A new eCommerce project..
+username: mor_2314
+password: 83r5^_
 
 ## Getting Started
 
