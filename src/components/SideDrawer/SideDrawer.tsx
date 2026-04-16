@@ -12,7 +12,7 @@ type SideDrawerProps = {
 };
 
 const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
-    const { login } = useAuth();
+    const { login, logout } = useAuth();
     const [form, setForm] = useState({
         username: "",
         password: ""
@@ -56,6 +56,11 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleLogout = () => {
+        logout();
+        onClose(); // close drawer
     };
 
     return (
@@ -126,7 +131,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                     <span>New at eCommerce?</span>
                 </div>
 
-                <button className="create-btn">Create account</button>
+                <button className="create-btn" onClick={handleLogout}>Create account</button>
             </div>
         </>
     );
