@@ -1,9 +1,9 @@
 {
-  "homepage": "https://subratacitytech.github.io/react_demo/",
   "name": "react_learning",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://subratacitytech.github.io/react_demo/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

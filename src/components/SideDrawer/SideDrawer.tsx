@@ -1,7 +1,7 @@
 import { IoClose } from 'react-icons/io5';
 import './SideDrawer.css';
 import { FcGoogle } from 'react-icons/fc';
-import { FaFacebookSquare } from 'react-icons/fa';
+// import { FaFacebookSquare } from 'react-icons/fa';
 import { loginUser } from '../../api/authApi';
 import { useState } from 'react';
 import { useAuth } from '../../context/useAuth';
@@ -122,10 +122,10 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                     <FcGoogle className="icon" /> Login with Google
                 </button>
 
-                <button className="social-login-btn">
+                {/* <button className="social-login-btn">
                     <FaFacebookSquare className="icon" style={{ color: '#2669F6' }} />
                     Login with Facebook
-                </button>
+                </button> */}
 
                 <div className="divider">
                     <span>New at eCommerce?</span>

@@ -41,7 +41,7 @@ Built with performance, clean UI, and real-world usability in mind.
 ## 📂 Project Structure
 
 ```
-my-react-app/
+react_demo/
  ├── node_modules/
  ├── public/
  ├── src/

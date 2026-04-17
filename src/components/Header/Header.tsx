@@ -1,16 +1,19 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import Topbar from '../Topbar/Topbar'
 import './Header.css'
 import { CiDeliveryTruck, CiHeart, CiSearch, CiShoppingCart, CiUser } from 'react-icons/ci';
 import NavActionButton from '../Button/NavActionButton';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../context/useAuth';
 
 
 
 export default function Header() {
+    const { logout } = useAuth();
     const [searchVal, setSearchVal] = useState("");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
 
     const auth = useContext(AuthContext);
 
@@ -21,7 +24,13 @@ export default function Header() {
         Icon: CiUser,
         label: `Hi, ${username || "User"}`,
         className: "account",
-        onClick: () => setIsDrawerOpen(true),
+        onClick: () => {
+            if (!username) {
+                setIsDrawerOpen(true)
+            } else {
+                setShowMenu(true);
+            }
+        },
     },
     {
         href: "#",
@@ -41,6 +50,11 @@ export default function Header() {
         // label: "Cart",
         className: "cart",
     }]
+
+    const handleLogout = () => {
+        logout();
+        setShowMenu(false);// close drawer
+    };
     return (
         <>
             <Topbar />
@@ -75,6 +89,11 @@ export default function Header() {
                                 </NavActionButton>
                             ))
                         }
+                        {showMenu && username && (
+                            <div className="dropdown-menu">
+                                <button onClick={handleLogout}>Logout</button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav >
