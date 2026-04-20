@@ -1,10 +1,11 @@
 import { IoClose } from 'react-icons/io5';
 import './SideDrawer.css';
-import { FcGoogle } from 'react-icons/fc';
+// import { FcGoogle } from 'react-icons/fc';
 // import { FaFacebookSquare } from 'react-icons/fa';
-import { loginUser } from '../../api/authApi';
+// import { loginUser } from '../../api/authApi';
 import { useState } from 'react';
-import { useAuth } from '../../context/useAuth';
+// import { useAuth } from '../../context/useAuth';
+import { useAuthForm } from '../../hooks/useAuthForm';
 
 type SideDrawerProps = {
     isOpen: boolean;
@@ -12,56 +13,60 @@ type SideDrawerProps = {
 };
 
 const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
-    const { login, logout } = useAuth();
-    const [form, setForm] = useState({
-        username: "",
-        password: ""
-    });
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const { form, loading, error, handleChange, handleLogin } =
+        useAuthForm(onClose);
+    const [mode, setMode] = useState<"login" | "signup">("login");
+    // const { login } = useAuth();
+    // const [form, setForm] = useState({
+    //     username: "",
+    //     password: ""
+    // });
 
-    // ✅ handle input
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setForm({
-            ...form,
-            [e.target.id]: e.target.value
-        });
-    };
+    // const [loading, setLoading] = useState(false);
+    // const [error, setError] = useState("");
 
-    // ✅ handle login (ONLY here API runs)
-    const handleLogin = async () => {
-        setLoading(true);
-        setError("");
+    // // ✅ handle input
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setForm({
+    //         ...form,
+    //         [e.target.id]: e.target.value
+    //     });
+    // };
 
-        try {
-            const res = await loginUser(form);
+    // // ✅ handle login (ONLY here API runs)
+    // const handleLogin = async () => {
+    //     setLoading(true);
+    //     setError("");
 
-            console.log("Token:", res.data.token);
+    //     try {
+    //         const res = await loginUser(form);
 
-            // save token
-            localStorage.setItem("token", res.data.token);
+    //         console.log("Token:", res.data.token);
 
-            // save username
-            localStorage.setItem("username", form.username);
-            login(form.username);
+    //         // save token
+    //         localStorage.setItem("token", res.data.token);
 
-            // alert("Login successful 🚀");
-            console.log("Username from context:", form.username);
+    //         // save username
+    //         localStorage.setItem("username", form.username);
+    //         login(form.username);
+
+    //         // alert("Login successful 🚀");
+    //         console.log("Username from context:", form.username);
 
 
-            onClose(); // optional: close drawer after login
-        } catch (err) {
-            setError("Invalid username or password");
-        } finally {
-            setLoading(false);
-        }
-    };
+    //         onClose(); // optional: close drawer after login
+    //     } catch (err) {
+    //         setError("Invalid username or password");
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
-    const handleLogout = () => {
-        logout();
-        onClose(); // close drawer
-    };
+    // const handleLogout = () => {
+    //     logout();
+    //     onClose(); // close drawer
+    // };
 
     return (
         <>
@@ -70,7 +75,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
             <div className={`drawer ${isOpen ? "open" : ""}`}>
                 <div className="drawer-header">
                     <h2>
-                        Log in to your account
+                        {mode === "login" ? "Login" : "Sign Up"} in to your account
                         <small>
                             Welcome back! We’ll remember your details so you can get straight to what matters.
                         </small>
@@ -116,11 +121,11 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                     </p>
                 )}
 
-                <p className="social-text text-center">Or use social login below</p>
+                {/* <p className="social-text text-center">Or use social login below</p> */}
 
-                <button className="social-login-btn">
+                {/* <button className="social-login-btn">
                     <FcGoogle className="icon" /> Login with Google
-                </button>
+                </button> */}
 
                 {/* <button className="social-login-btn">
                     <FaFacebookSquare className="icon" style={{ color: '#2669F6' }} />
@@ -128,10 +133,10 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
                 </button> */}
 
                 <div className="divider">
-                    <span>New at eCommerce?</span>
+                    <span>{mode === "login" ? "New user?" : "Already have account?"} at eCommerce?</span>
                 </div>
 
-                <button className="create-btn" onClick={handleLogout}>Create account</button>
+                <button className="create-btn">Create account</button>
             </div>
         </>
     );

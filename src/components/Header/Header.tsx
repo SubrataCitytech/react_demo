@@ -5,19 +5,19 @@ import { CiDeliveryTruck, CiHeart, CiSearch, CiShoppingCart, CiUser } from 'reac
 import NavActionButton from '../Button/NavActionButton';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import { AuthContext } from '../../context/AuthContext';
-import { useAuth } from '../../context/useAuth';
+// import { useAuth } from '../../context/useAuth';
 
 
 
 export default function Header() {
-    const { logout } = useAuth();
+    // const { logout } = useAuth();
     const [searchVal, setSearchVal] = useState("");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
 
     const auth = useContext(AuthContext);
 
     const username = auth?.username;
+
 
     const navActionBtn = [{
         href: "#",
@@ -25,12 +25,8 @@ export default function Header() {
         label: `Hi, ${username || "User"}`,
         className: "account",
         onClick: () => {
-            if (!username) {
-                setIsDrawerOpen(true)
-            } else {
-                setShowMenu(true);
-            }
-        },
+            setIsDrawerOpen(true)
+        }
     },
     {
         href: "#",
@@ -51,10 +47,10 @@ export default function Header() {
         className: "cart",
     }]
 
-    const handleLogout = () => {
-        logout();
-        setShowMenu(false);// close drawer
-    };
+    // const handleLogout = () => {
+    //     logout();
+    //     setShowMenu(false);// close drawer
+    // };
     return (
         <>
             <Topbar />
@@ -77,23 +73,17 @@ export default function Header() {
                     <div className="nav-actions">
                         {
                             navActionBtn.map((item, index) => (
-                                <NavActionButton key={index} href={item.href} Icon={item.Icon} className={item.className}
-                                    // onClick={
-                                    //     item.label === "Account"
-                                    //         ? () => setIsDrawerOpen(true)
-                                    //         : undefined
-                                    // }
+                                <NavActionButton
+                                    key={index}
+                                    href={item.href}
+                                    Icon={item.Icon}
+                                    className={item.className}
                                     onClick={item.onClick}
                                 >
                                     {item.label}
                                 </NavActionButton>
                             ))
                         }
-                        {showMenu && username && (
-                            <div className="dropdown-menu">
-                                <button onClick={handleLogout}>Logout</button>
-                            </div>
-                        )}
                     </div>
                 </div>
             </nav >
