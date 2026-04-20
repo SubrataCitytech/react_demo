@@ -16,7 +16,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ isOpen, onClose }) => {
 
     const { form, loading, error, handleChange, handleLogin } =
         useAuthForm(onClose);
-    const [mode, setMode] = useState<"login" | "signup">("login");
+    // const [mode, setMode] = useState<"login" | "signup">("login");
     // const { login } = useAuth();
     // const [form, setForm] = useState({
     //     username: "",
