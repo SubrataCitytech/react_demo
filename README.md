@@ -41,15 +41,99 @@ Built with performance, clean UI, and real-world usability in mind.
 ## 📂 Project Structure
 
 ```
-react_demo/
- ├── node_modules/
- ├── public/
- ├── src/
- │   ├── App.jsx
- │   ├── main.jsx
- │   └── assets/
- ├── index.html
- ├── package.json
+  react_demo/
+  ├── node_modules/
+  ├── public/
+  src/
+  │
+  ├── app/
+  │   ├── store.ts
+  │   └── rootReducer.ts
+  │
+  ├── services/
+  │   ├── apiClient.ts          # axios baseURL = fakestoreapi
+  │   └── interceptors.ts
+  │
+  ├── features/
+  │
+  │   ├── auth/                 # (FakeStore has no auth → mock/local)
+  │   │   ├── components/
+  │   │   ├── pages/
+  │   │   │   └── Login.tsx
+  │   │   ├── hooks/
+  │   │   │   └── useAuth.ts
+  │   │   ├── services/
+  │   │   │   └── authApi.ts    # mock login
+  │   │   ├── authSlice.ts
+  │   │   └── authTypes.ts
+  │
+  │   ├── product/
+  │   │   ├── components/
+  │   │   │   ├── ProductCard.tsx
+  │   │   │   └── ProductList.tsx
+  │   │   ├── pages/
+  │   │   │   ├── ProductListing.tsx
+  │   │   │   └── ProductDetails.tsx
+  │   │   ├── hooks/
+  │   │   │   └── useProduct.ts
+  │   │   ├── services/
+  │   │   │   └── productApi.ts   # ✅ FakeStore integration
+  │   │   ├── productSlice.ts
+  │   │   └── productTypes.ts
+  │
+  │   ├── cart/
+  │   │   ├── components/
+  │   │   │   └── CartItem.tsx
+  │   │   ├── pages/
+  │   │   │   └── CartPage.tsx
+  │   │   ├── hooks/
+  │   │   │   └── useCart.ts
+  │   │   ├── cartSlice.ts
+  │   │   └── cartUtils.ts
+  │
+  │   ├── order/
+  │   │   ├── pages/
+  │   │   │   └── Checkout.tsx
+  │   │   └── orderSlice.ts
+  │
+  │   └── payment/
+  │       ├── strategies/
+  │       │   ├── razorpay.ts
+  │       │   ├── stripe.ts
+  │       │   └── index.ts
+  │
+  ├── components/
+  │   ├── common/
+  │   │   ├── Button.tsx
+  │   │   ├── Loader.tsx
+  │   │   └── Input.tsx
+  │   ├── layout/
+  │   │   ├── Header.tsx
+  │   │   └── Footer.tsx
+  │   └── ui/
+  │       ├── Rating.tsx
+  │       └── PriceTag.tsx
+  │
+  ├── hooks/
+  │   └── useDebounce.ts
+  │
+  ├── utils/
+  │   ├── formatPrice.ts
+  │   └── constants.ts
+  │
+  ├── routes/
+  │   ├── AppRoutes.tsx
+  │   └── PrivateRoute.tsx
+  │
+  ├── config/
+  │   └── env.ts
+  │
+  ├── assets/
+  │
+  ├── App.tsx
+  └── main.tsx
+  ├── index.html
+  ├── package.json
 ```
 
 ---

@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import Topbar from '../Topbar/Topbar'
+import Topbar from '../common/Topbar/Topbar'
 import './Header.css'
 import { CiDeliveryTruck, CiHeart, CiSearch, CiShoppingCart, CiUser } from 'react-icons/ci';
-import NavActionButton from '../Button/NavActionButton';
-import SideDrawer from '../SideDrawer/SideDrawer';
+import NavActionButton from '../common/Button/NavActionButton';
+import SideDrawer from '../common/SideDrawer/SideDrawer';
 import { AuthContext } from '../../context/AuthContext';
 // import { useAuth } from '../../context/useAuth';
 
