@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useAuth } from "../../../context/useAuth";
 import { loginUser, signupUser } from "../services/authApi";
+import { signInWithGoogle } from "../authService";
 
 type FormState = {
-    regpassword: string;
     regemail: string;
     regusername: string;
     username: string;
@@ -17,7 +17,6 @@ export const useAuthForm = (onSuccess?: () => void) => {
         password: "",
         regemail: "",
         regusername: "",
-        regpassword: "",
     });
 
     const [loading, setLoading] = useState(false);
@@ -59,7 +58,6 @@ export const useAuthForm = (onSuccess?: () => void) => {
             const payload = {
                 email: form.regemail,
                 username: form.regusername,
-                password: form.regpassword,
             };
 
             const res = await signupUser(payload);
@@ -78,6 +76,19 @@ export const useAuthForm = (onSuccess?: () => void) => {
         }
     };
 
+    const handleGoogle = async () => {
+        setLoading(true);
+        try {
+            const user = await signInWithGoogle();
+            console.log("Signed in:", user.displayName);
+            // navigate("/dashboard") — redirect here
+        } catch (err) {
+            alert("Sign-in failed. Try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return {
         form,
         loading,
@@ -85,5 +96,7 @@ export const useAuthForm = (onSuccess?: () => void) => {
         handleChange,
         handleLogin,
         handleSignup,
+        handleGoogle,
     };
 };
+
